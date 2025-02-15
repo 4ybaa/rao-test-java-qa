@@ -33,10 +33,5 @@ public class YamlConfigReader {
     return ((Map<String, String>) yamlData.get("yandex")).get("password");
   }
 
-  /**
-   * Получает номер телефона (если авторизация по номеру).
-   */
-  public static String getYandexPhone() {
-    return ((Map<String, String>) yamlData.get("yandex")).get("phone");
-  }
+
 }

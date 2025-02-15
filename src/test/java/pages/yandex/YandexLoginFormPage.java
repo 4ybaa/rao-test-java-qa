@@ -7,14 +7,14 @@ import org.openqa.selenium.By;
 
 public class YandexLoginFormPage {
 
-  private final String loginInputCss = "input[name='login']";
-  private final String loginSubmitButtonCss = "passp:sign-in";
+  public static String LOGIN_INPUT_ID = "passp-field-login";
+  public static String LOGIN_SUBMIT_BUTTON_ID = "passp:sign-in";
 
   /**
    * Ввод логина (почты).
    */
   public YandexLoginFormPage setLogin(String login) {
-    $(loginInputCss).shouldBe(visible).setValue(login);
+    $(By.id(LOGIN_INPUT_ID)).shouldBe(visible).setValue(login);
     return this;
   }
 
@@ -22,7 +22,7 @@ public class YandexLoginFormPage {
    * Нажимает кнопку "Войти".
    */
   public YandexPasswordPage clickLoginSubmit() {
-    $(By.id(loginSubmitButtonCss)).shouldBe(visible).click();
+    $(By.id(LOGIN_SUBMIT_BUTTON_ID)).shouldBe(visible).click();
     return new YandexPasswordPage();
   }
 }

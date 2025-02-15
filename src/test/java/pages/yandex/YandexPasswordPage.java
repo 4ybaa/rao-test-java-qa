@@ -7,14 +7,14 @@ import org.openqa.selenium.By;
 
 public class YandexPasswordPage {
 
-  private final String passwordInputCss = "passp-field-passwd";
-  private final String passwordSubmitButtonCss = "passp:sign-in";
+  public static final String PASSWORD_INPUT_ID = "passp-field-passwd";
+  public static final String PASSWORD_SUBMIT_BUTTON_ID = "passp:sign-in";
 
   /**
    * Ввод пароля.
    */
   public YandexPasswordPage setPassword(String password) {
-    $(By.id(passwordInputCss)).shouldBe(visible).setValue(password);
+    $(By.id(PASSWORD_INPUT_ID)).shouldBe(visible).setValue(password);
     return this;
   }
 
@@ -22,7 +22,7 @@ public class YandexPasswordPage {
    * Нажимаем кнопку "Продолжить".
    */
   public Yandex2FAPage clickPasswordSubmit() {
-    $(By.id(passwordSubmitButtonCss)).shouldBe(visible).click();
+    $(By.id(PASSWORD_SUBMIT_BUTTON_ID)).shouldBe(visible).click();
     return new Yandex2FAPage();
   }
 }

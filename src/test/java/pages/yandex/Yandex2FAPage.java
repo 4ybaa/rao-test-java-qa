@@ -7,14 +7,13 @@ import org.openqa.selenium.By;
 
 public class Yandex2FAPage {
 
-  private final String codeInputCss = "passp-field-phoneCode";
-  private final String confirmButtonCss = "button[aria-label='Далее']";
+  private final String codeInputId = "passp-field-phoneCode";
 
   /**
    * Ввод кода из SMS/приложения.
    */
   public Yandex2FAPage setAuthCode(String code) {
-    $(By.id(codeInputCss)).shouldBe(visible).setValue(code);
+    $(By.id(codeInputId)).shouldBe(visible).setValue(code);
     return this;
   }
 
@@ -23,7 +22,7 @@ public class Yandex2FAPage {
    */
 
   public boolean isYandex2FAPageIsLoaded() {
-    return $(By.id(codeInputCss)).shouldBe(visible).exists();
+    return $(By.id(codeInputId)).shouldBe(visible).exists();
   }
 
 

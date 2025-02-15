@@ -3,7 +3,6 @@ package pages.dzen;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
-import pages.yandex.YandexAccountSelectionPage;
 import pages.yandex.YandexLoginFormPage;
 
 public class DzenLoginPage {

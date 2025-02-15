@@ -3,19 +3,16 @@ package pages.dzen;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.sleep;
 
 public class DzenMainPage {
 
-  static final String SIGN_IN_BUTTON_CSS = "button.dzen-layout--login-button__textButton-1t";
-
+  private static final String SIGN_IN_BUTTON_CSS_SELECTOR = "[data-testid='login-button']";
 
   /**
    * Открывает главную страницу Яндекса.
    */
   public DzenMainPage openPage() {
     open("https://yandex.ru/");
-    sleep(2000);
     return this;
   }
 
@@ -23,7 +20,7 @@ public class DzenMainPage {
    * Клик по кнопке "Войти" для перехода на страницу авторизации.
    */
   public DzenLoginPage clickSignIn() {
-    $(SIGN_IN_BUTTON_CSS).shouldBe(visible).click();
+    $(SIGN_IN_BUTTON_CSS_SELECTOR).shouldBe(visible).click();
     return new DzenLoginPage();
   }
 
@@ -31,7 +28,7 @@ public class DzenMainPage {
    * Проверяет, что главная страница Яндекса загрузилась.
    */
   public DzenMainPage checkPageIsLoaded() {
-    $(SIGN_IN_BUTTON_CSS).shouldBe(visible);
+    $(SIGN_IN_BUTTON_CSS_SELECTOR).shouldBe(visible);
     return this;
   }
 }
