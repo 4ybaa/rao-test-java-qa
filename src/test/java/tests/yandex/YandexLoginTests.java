@@ -23,15 +23,12 @@ public class YandexLoginTests {
     DzenMainPage mainPage = new DzenMainPage().openPage().checkPageIsLoaded();
     DzenLoginPage loginPage = mainPage.clickSignIn();
 
-    // Переход в Яндекс ID
     var loginFormPage = loginPage.selectYandexIDLogin();
 
-    // Нажимаем "Добавить аккаунт"
     loginFormPage.setLogin(VALID_LOGIN);
 
     YandexPasswordPage yandexPasswordPage = loginFormPage.clickLoginSubmit();
 
-    // Ввод логина и нажатие "Войти"
     yandexPasswordPage.setPassword(VALID_PASSWORD);
 
     Yandex2FAPage yandex2FAPage = yandexPasswordPage.clickPasswordSubmit();
